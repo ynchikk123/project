@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History of Education</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#1e3a8a',secondary:'#8b5cf6'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: #1f2937;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Merriweather', serif;
+        }
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: -38px;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: #1e3a8a;
+            border: 3px solid white;
+            z-index: 1;
+        }
+        .timeline-item:after {
+            content: '';
+            position: absolute;
+            left: -31px;
+            top: 16px;
+            width: 2px;
+            height: calc(100% + 24px);
+            background-color: #e5e7eb;
+            z-index: 0;
+        }
+        .timeline-item:last-child:after {
+            display: none;
+        }
+        .reflection-card {
+            position: relative;
+        }
+        .reflection-card:before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: -10px;
+            font-size: 80px;
+            font-family: 'Merriweather', serif;
+            color: rgba(30, 58, 138, 0.1);
+            z-index: 0;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #1e3a8a;
+            cursor: pointer;
+        }
+        .custom-tab-active {
+            background-color: #1e3a8a;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-primary">History of Education</h1>
+            <nav class="hidden md:flex space-x-6">
+                <a href="#school-education" class="text-gray-700 hover:text-primary transition-colors">School Education</a>
+                <a href="#higher-education" class="text-gray-700 hover:text-primary transition-colors">Higher Education</a>
+                <a href="#future-education" class="text-gray-700 hover:text-primary transition-colors">Future of Education</a>
+            </nav>
+            <button class="md:hidden w-10 h-10 flex items-center justify-center text-gray-700" id="mobile-menu-button">
+                <i class="ri-menu-line ri-lg"></i>
+            </button>
+        </div>
+        <div class="hidden container mx-auto px-4 py-2 md:hidden" id="mobile-menu">
+            <div class="flex flex-col space-y-2">
+                <a href="#school-education" class="text-gray-700 hover:text-primary transition-colors py-2">School Education</a>
+                <a href="#higher-education" class="text-gray-700 hover:text-primary transition-colors py-2">Higher Education</a>
+                <a href="#future-education" class="text-gray-700 hover:text-primary transition-colors py-2">Future of Education</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative">
+        <div class="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-white/50 z-10"></div>
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=A%20panoramic%20view%20of%20education%20through%20the%20ages%2C%20showing%20a%20seamless%20transition%20from%20ancient%20Greek%20academies%20with%20stone%20columns%20and%20scholars%20in%20togas%2C%20to%20medieval%20monastery%20schools%20with%20monks%20and%20manuscripts%2C%20to%20Victorian-era%20classrooms%20with%20chalkboards%2C%20to%20modern%20digital%20learning%20environments%20with%20computers%20and%20interactive%20displays.%20The%20image%20has%20a%20scholarly%2C%20historical%20aesthetic%20with%20warm%20lighting%20that%20highlights%20the%20evolution%20of%20teaching%20methods%20and%20educational%20spaces%20throughout%20human%20history.&width=1600&height=600&seq=1&orientation=landscape');"></div>
+        <div class="container mx-auto px-4 py-20 md:py-32 relative z-20">
+            <div class="max-w-3xl">
+                <h1 class="text-4xl md:text-5xl font-bold text-primary mb-6">The Evolution of Education</h1>
+                <p class="text-lg md:text-xl text-gray-800 mb-8">Exploring the transformation of educational systems from ancient civilizations to modern digital learning environments, and envisioning the future of knowledge acquisition.</p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#school-education" class="bg-primary text-white px-6 py-3 !rounded-button whitespace-nowrap hover:bg-primary/90 transition-colors">School Education</a>
+                    <a href="#higher-education" class="bg-white border border-primary text-primary px-6 py-3 !rounded-button whitespace-nowrap hover:bg-gray-50 transition-colors">Higher Education</a>
+                    <a href="#future-education" class="bg-white border border-gray-300 text-gray-700 px-6 py-3 !rounded-button whitespace-nowrap hover:bg-gray-50 transition-colors">Future of Education</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- School Education Section -->
+    <section id="school-education" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-primary mb-4">The History of School Education</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">From ancient civilizations to modern classrooms, discover how formal education has evolved throughout human history.</p>
+            </div>
+
+            <!-- Timeline Controls -->
+            <div class="mb-12 max-w-4xl mx-auto">
+                <div class="flex justify-between items-center mb-4">
+                    <span class="text-sm text-gray-500">Ancient Times</span>
+                    <span class="text-sm text-gray-500">Present Day</span>
+                </div>
+                <input type="range" min="1" max="5" value="1" class="w-full h-2 bg-gray-200 rounded-full appearance-none cursor-pointer" id="timeline-slider">
+                <div class="flex justify-between mt-2">
+                    <span class="text-xs text-gray-500">3000 BCE</span>
+                    <span class="text-xs text-gray-500">500 BCE</span>
+                    <span class="text-xs text-gray-500">500 CE</span>
+                    <span class="text-xs text-gray-500">1500 CE</span>
+                    <span class="text-xs text-gray-500">Present</span>
+                </div>
+            </div>
+
+            <!-- Timeline Content -->
+            <div class="max-w-4xl mx-auto" id="timeline-content">
+                <!-- Ancient Education (3000 BCE - 500 BCE) -->
+                <div class="timeline-section" id="timeline-1">
+                    <h3 class="text-2xl font-bold text-primary mb-6">Ancient Education (3000 BCE - 500 BCE)</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-8 mb-12">
+                        <div>
+                            <p class="mb-4">The earliest formal education systems emerged in ancient civilizations like Mesopotamia, Egypt, India, and China. Education was primarily reserved for the elite and focused on practical skills, religious teachings, and cultural values.</p>
+                            
+                            <h4 class="text-xl font-semibold mb-3">Key Developments:</h4>
+                            <ul class="list-disc pl-5 space-y-2 mb-6">
+                                <li><strong>Mesopotamia (3500-3000 BCE):</strong> First known schools called "tablet houses" where scribes learned cuneiform writing.</li>
+                                <li><strong>Ancient Egypt (3000 BCE):</strong> Formal education for scribes and priests in "Houses of Life."</li>
+                                <li><strong>Ancient China (2000 BCE):</strong> Development of imperial examinations and Confucian educational philosophy.</li>
+                                <li><strong>Ancient Greece (800-500 BCE):</strong> Establishment of gymnasiums, the Lyceum, and the Academy.</li>
+                            </ul>
+                            
+                            <h4 class="text-xl font-semibold mb-3">Important Figures:</h4>
+                            <ul class="list-disc pl-5 space-y-2">
+                                <li><strong>Confucius (551-479 BCE):</strong> Chinese philosopher whose teachings formed the foundation of Chinese education for centuries.</li>
+                                <li><strong>Socrates (470-399 BCE):</strong> Developed the Socratic method of questioning to stimulate critical thinking.</li>
+                                <li><strong>Plato (428-348 BCE):</strong> Founded the Academy in Athens, one of the earliest known institutions of higher learning.</li>
+                                <li><strong>Aristotle (384-322 BCE):</strong> Established the Lyceum and contributed to various fields of knowledge.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="bg-white p-6 rounded shadow-md mb-6">
+                                <h4 class="text-lg font-semibold mb-4">Educational Methods in Ancient Times</h4>
+                                <ul class="list-disc pl-5 space-y-2">
+                                    <li><strong>Oral Tradition:</strong> Knowledge passed down through memorization and recitation.</li>
+                                    <li><strong>Apprenticeship:</strong> Practical skills taught through direct mentorship.</li>
+                                    <li><strong>Religious Instruction:</strong> Moral and ethical teachings based on religious texts.</li>
+                                    <li><strong>Physical Training:</strong> Especially emphasized in Sparta and other Greek city-states.</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="aspect-w-16 aspect-h-9 rounded overflow-hidden">
+                                <img src="https://readdy.ai/api/search-image?query=Ancient%20Greek%20education%20scene%20with%20philosophers%20teaching%20young%20students%20in%20an%20outdoor%20setting%20with%20marble%20columns.%20Students%20are%20seated%20on%20stone%20benches%20taking%20notes%20on%20wax%20tablets%20while%20the%20teacher%20gestures%20expressively.%20The%20scene%20shows%20the%20Socratic%20method%20in%20action%20with%20students%20engaged%20in%20dialogue.%20The%20setting%20includes%20olive%20trees%20and%20classical%20Greek%20architecture%20in%20the%20background%20with%20warm%20Mediterranean%20sunlight%20illuminating%20the%20scene.&width=600&height=400&seq=2&orientation=landscape" alt="Ancient Greek education" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Classical and Medieval Education (500 BCE - 1500 CE) -->
+                <div class="timeline-section hidden" id="timeline-2">
+                    <h3 class="text-2xl font-bold text-primary mb-6">Classical and Medieval Education (500 BCE - 1500 CE)</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-8 mb-12">
+                        <div>
+                            <p class="mb-4">This period saw the rise of Roman educational practices, followed by the preservation of knowledge in religious institutions during the Middle Ages, and the eventual establishment of the first universities in Europe.</p>
+                            
+                            <h4 class="text-xl font-semibold mb-3">Key Developments:</h4>
+                            <ul class="list-disc pl-5 space-y-2 mb-6">
+                                <li><strong>Roman Education (500 BCE - 500 CE):</strong> Formalized system with primary, secondary, and higher education levels.</li>
+                                <li><strong>Monastic Schools (6th-12th centuries):</strong> Preservation of classical knowledge by religious orders.</li>
+                                <li><strong>Cathedral Schools (10th-12th centuries):</strong> Urban educational centers attached to cathedrals.</li>
+                                <li><strong>First Universities (11th-13th centuries):</strong> Establishment of Bologna (1088), Paris (c.1150), Oxford (1167), and Cambridge (1209).</li>
+                                <li><strong>Islamic Golden Age (8th-14th centuries):</strong> Advancement of knowledge in mathematics, astronomy, medicine, and philosophy.</li>
+                            </ul>
+                            
+                            <h4 class="text-xl font-semibold mb-3">Important Figures:</h4>
+                            <ul class="list-disc pl-5 space-y-2">
+                                <li><strong>Quintilian (35-100 CE):</strong> Roman educator who wrote "Institutes of Oratory," advocating for public education.</li>
+                                <li><strong>St. Benedict (480-547 CE):</strong> Established monasteries that preserved classical knowledge.</li>
+                                <li><strong>Charlemagne (742-814 CE):</strong> Promoted education throughout his empire with the Carolingian Renaissance.</li>
+                                <li><strong>Al-Farabi (872-950 CE):</strong> Muslim philosopher who contributed to educational theory.</li>
+                                <li><strong>Thomas Aquinas (1225-1274 CE):</strong> Scholastic philosopher who integrated Aristotelian philosophy with Christian theology.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="bg-white p-6 rounded shadow-md mb-6">
+                                <h4 class="text-lg font-semibold mb-4">The Seven Liberal Arts</h4>
+                                <p class="mb-3">Medieval education was structured around the seven liberal arts, divided into two categories:</p>
+                                <ul class="mb-4">
+                                    <li><strong>Trivium:</strong> Grammar, Logic, Rhetoric</li>
+                                    <li><strong>Quadrivium:</strong> Arithmetic, Geometry, Astronomy, Music</li>
+                                </ul>
+                                <p>This curriculum formed the foundation of Western education for nearly a millennium.</p>
+                            </div>
+                            
+                            <div class="aspect-w-16 aspect-h-9 rounded overflow-hidden">
+                                <img src="https://readdy.ai/api/search-image?query=Medieval%20monastery%20scriptorium%20with%20monks%20carefully%20copying%20manuscripts%20by%20candlelight.%20The%20scene%20shows%20several%20monks%20in%20brown%20robes%20working%20at%20wooden%20desks%20with%20quills%20and%20parchment.%20Illuminated%20manuscripts%20with%20ornate%20decorations%20are%20visible.%20The%20room%20has%20stone%20walls%2C%20arched%20windows%20with%20colored%20glass%2C%20and%20wooden%20bookshelves%20filled%20with%20scrolls.%20The%20atmosphere%20is%20scholarly%20and%20contemplative%20with%20warm%20golden%20candlelight%20illuminating%20the%20focused%20faces%20of%20the%20monks%20as%20they%20preserve%20knowledge.&width=600&height=400&seq=3&orientation=landscape" alt="Medieval monastery education" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Renaissance to Industrial Revolution (1500 - 1800) -->
+                <div class="timeline-section hidden" id="timeline-3">
+                    <h3 class="text-2xl font-bold text-primary mb-6">Renaissance to Industrial Revolution (1500 - 1800)</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-8 mb-12">
+                        <div>
+                            <p class="mb-4">This era witnessed a revival of classical learning, the impact of the printing press on education, and the beginnings of educational reform. Scientific advances and Enlightenment thinking transformed educational philosophy.</p>
+                            
+                            <h4 class="text-xl font-semibold mb-3">Key Developments:</h4>
+                            <ul class="list-disc pl-5 space-y-2 mb-6">
+                                <li><strong>Renaissance Humanism (14th-17th centuries):</strong> Revival of classical learning and emphasis on human potential.</li>
+                                <li><strong>Printing Press (1440s):</strong> Gutenberg's invention dramatically increased access to books and knowledge.</li>
+                                <li><strong>Protestant Reformation (16th century):</strong> Promoted literacy to enable Bible reading, leading to increased schooling.</li>
+                                <li><strong>Scientific Revolution (16th-17th centuries):</strong> Emphasized empirical observation and experimentation.</li>
+                                <li><strong>Enlightenment (17th-18th centuries):</strong> Promoted reason, skepticism, and educational reform.</li>
+                                <li><strong>Early Public Education:</strong> First state-sponsored school systems emerged in Prussia and other German states.</li>
+                            </ul>
+                            
+                            <h4 class="text-xl font-semibold mb-3">Important Figures:</h4>
+                            <ul class="list-disc pl-5 space-y-2">
+                                <li><strong>Erasmus (1466-1536):</strong> Humanist scholar who advocated for educational reform.</li>
+                                <li><strong>Martin Luther (1483-1546):</strong> Promoted universal education to enable Bible reading.</li>
+                                <li><strong>John Amos Comenius (1592-1670):</strong> Created the first illustrated textbook and advocated for universal education.</li>
+                                <li><strong>John Locke (1632-1704):</strong> Proposed that the mind begins as a "blank slate" shaped by experience.</li>
+                                <li><strong>Jean-Jacques Rousseau (1712-1778):</strong> Advocated for child-centered education in "Emile, or On Education."</li>
+                                <li><strong>Johann Heinrich Pestalozzi (1746-1827):</strong> Developed a method of education based on sensory experiences.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="bg-white p-6 rounded shadow-md mb-6">
+                                <h4 class="text-lg font-semibold mb-4">Educational Innovations of the Era</h4>
+                                <ul class="list-disc pl-5 space-y-2">
+                                    <li><strong>Textbooks:</strong> Development of specialized educational materials.</li>
+                                    <li><strong>Vernacular Education:</strong> Increasing use of local languages instead of Latin.</li>
+                                    <li><strong>Scientific Curriculum:</strong> Integration of new scientific discoveries into education.</li>
+                                    <li><strong>Child Psychology:</strong> Beginning recognition of developmental stages in learning.</li>
+                                    <li><strong>Girls' Education:</strong> Gradual expansion of educational opportunities for females, though still limited.</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="aspect-w-16 aspect-h-9 rounded overflow-hidden">
+                                <img src="https://readdy.ai/api/search-image?query=Renaissance%20era%20classroom%20with%20a%20humanist%20teacher%20instructing%20students%20from%20printed%20books.%20The%20scene%20shows%20a%20well-lit%20room%20with%20wooden%20desks%20and%20benches%20where%20students%20of%20various%20ages%20are%20seated.%20The%20teacher%20wears%20Renaissance-period%20clothing%20and%20stands%20near%20a%20large%20desk%20with%20an%20open%20book.%20The%20walls%20have%20maps%20and%20astronomical%20charts.%20Through%20the%20windows%2C%20a%20European%20city%20landscape%20is%20visible.%20The%20atmosphere%20conveys%20the%20intellectual%20excitement%20of%20the%20Renaissance%20with%20its%20emphasis%20on%20classical%20learning%20and%20human%20potential.&width=600&height=400&seq=4&orientation=landscape" alt="Renaissance education" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modern Education (1800 - 1950) -->
+                <div class="timeline-section hidden" id="timeline-4">
+                    <h3 class="text-2xl font-bold text-primary mb-6">Modern Education (1800 - 1950)</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-8 mb-12">
+                        <div>
+                            <p class="mb-4">This period saw the establishment of compulsory education in many countries, the standardization of educational systems, and the development of new pedagogical approaches. Education became increasingly accessible to all social classes.</p>
+                            
+                            <h4 class="text-xl font-semibold mb-3">Key Developments:</h4>
+                            <ul class="list-disc pl-5 space-y-2 mb-6">
+                                <li><strong>Compulsory Education Laws:</strong> Widespread adoption across Europe and North America (1800s-early 1900s).</li>
+                                <li><strong>Public School Systems:</strong> Development of state-funded educational institutions.</li>
+                                <li><strong>Normal Schools:</strong> Establishment of teacher training institutions.</li>
+                                <li><strong>Kindergarten Movement:</strong> Introduction of early childhood education.</li>
+                                <li><strong>Progressive Education Movement:</strong> Child-centered approaches focusing on experience and inquiry.</li>
+                                <li><strong>Standardized Testing:</strong> Development of intelligence tests and achievement assessments.</li>
+                                <li><strong>Vocational Education:</strong> Growth of practical training programs alongside academic education.</li>
+                            </ul>
+                            
+                            <h4 class="text-xl font-semibold mb-3">Important Figures:</h4>
+                            <ul class="list-disc pl-5 space-y-2">
+                                <li><strong>Horace Mann (1796-1859):</strong> Advocate for universal public education in the United States.</li>
+                                <li><strong>Friedrich Froebel (1782-1852):</strong> Founder of the kindergarten movement.</li>
+                                <li><strong>Maria Montessori (1870-1952):</strong> Developed the Montessori method emphasizing self-directed learning.</li>
+                                <li><strong>John Dewey (1859-1952):</strong> Philosopher who promoted progressive education and learning by doing.</li>
+                                <li><strong>Booker T. Washington (1856-1915):</strong> Advocate for African American education and founder of Tuskegee Institute.</li>
+                                <li><strong>Jean Piaget (1896-1980):</strong> Developed theory of cognitive development in children.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="bg-white p-6 rounded shadow-md mb-6">
+                                <h4 class="text-lg font-semibold mb-4">The Evolution of the Classroom</h4>
+                                <ul class="list-disc pl-5 space-y-2">
+                                    <li><strong>One-Room Schoolhouses:</strong> Common in rural areas until the early 20th century.</li>
+                                    <li><strong>Graded Classrooms:</strong> Students organized by age and ability level.</li>
+                                    <li><strong>Standardized Curriculum:</strong> Development of consistent educational content.</li>
+                                    <li><strong>Teaching Tools:</strong> Evolution from slates to chalkboards to early audiovisual aids.</li>
+                                    <li><strong>School Architecture:</strong> Purpose-built educational facilities with specialized spaces.</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="aspect-w-16 aspect-h-9 rounded overflow-hidden">
+                                <img src="https://readdy.ai/api/search-image?query=Victorian%20era%20classroom%20from%20the%20late%2019th%20century%20with%20rows%20of%20wooden%20desks%20facing%20a%20teacher%20at%20a%20blackboard.%20The%20classroom%20has%20high%20ceilings%2C%20large%20windows%2C%20and%20educational%20charts%20on%20the%20walls.%20Students%20of%20various%20ages%20sit%20at%20individual%20desks%20with%20inkwells.%20The%20teacher%2C%20dressed%20in%20formal%20Victorian%20attire%2C%20points%20to%20mathematical%20equations%20on%20the%20blackboard.%20The%20room%20has%20a%20cast%20iron%20stove%20for%20heating%2C%20maps%20hanging%20on%20walls%2C%20and%20an%20American%20or%20British%20flag.%20The%20atmosphere%20conveys%20the%20structured%2C%20disciplined%20nature%20of%20education%20during%20this%20period.&width=600&height=400&seq=5&orientation=landscape" alt="Victorian era classroom" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contemporary Education (1950 - Present) -->
+                <div class="timeline-section hidden" id="timeline-5">
+                    <h3 class="text-2xl font-bold text-primary mb-6">Contemporary Education (1950 - Present)</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-8 mb-12">
+                        <div>
+                            <p class="mb-4">The contemporary era has witnessed rapid technological advancement, globalization of education, and increasing focus on inclusive and personalized learning approaches. Educational systems continue to evolve to meet the demands of a changing world.</p>
+                            
+                            <h4 class="text-xl font-semibold mb-3">Key Developments:</h4>
+                            <ul class="list-disc pl-5 space-y-2 mb-6">
+                                <li><strong>Educational Technology:</strong> From filmstrips and television to computers, internet, and mobile devices.</li>
+                                <li><strong>Special Education:</strong> Recognition and accommodation of diverse learning needs.</li>
+                                <li><strong>Multicultural Education:</strong> Increasing emphasis on cultural diversity and inclusion.</li>
+                                <li><strong>Standardized Testing:</strong> Growth of high-stakes testing and accountability measures.</li>
+                                <li><strong>Digital Learning:</strong> Development of online courses, virtual schools, and educational software.</li>
+                                <li><strong>Global Education:</strong> International assessments, exchange programs, and educational standards.</li>
+                                <li><strong>Pandemic Response (2020):</strong> Rapid shift to remote and hybrid learning models.</li>
+                            </ul>
+                            
+                            <h4 class="text-xl font-semibold mb-3">Important Figures:</h4>
+                            <ul class="list-disc pl-5 space-y-2">
+                                <li><strong>Howard Gardner (b. 1943):</strong> Developed the theory of multiple intelligences.</li>
+                                <li><strong>Paulo Freire (1921-1997):</strong> Advocated for critical pedagogy and education for liberation.</li>
+                                <li><strong>Seymour Papert (1928-2016):</strong> Pioneer in artificial intelligence and educational computing.</li>
+                                <li><strong>Sugata Mitra (b. 1952):</strong> Conducted the "Hole in the Wall" experiments demonstrating self-organized learning.</li>
+                                <li><strong>Sal Khan (b. 1976):</strong> Founder of Khan Academy, providing free online education.</li>
+                                <li><strong>Ken Robinson (1950-2020):</strong> Advocate for creativity and arts in education.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="bg-white p-6 rounded shadow-md mb-6">
+                                <h4 class="text-lg font-semibold mb-4">Contemporary Educational Approaches</h4>
+                                <ul class="list-disc pl-5 space-y-2">
+                                    <li><strong>Project-Based Learning:</strong> Students learn through extended projects and real-world challenges.</li>
+                                    <li><strong>Flipped Classroom:</strong> Content delivery at home, active learning in class.</li>
+                                    <li><strong>Personalized Learning:</strong> Tailoring education to individual needs and interests.</li>
+                                    <li><strong>Social-Emotional Learning:</strong> Focus on developing non-cognitive skills.</li>
+                                    <li><strong>STEM/STEAM Education:</strong> Emphasis on science, technology, engineering, arts, and mathematics.</li>
+                                    <li><strong>Blended Learning:</strong> Combination of in-person and digital instruction.</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="aspect-w-16 aspect-h-9 rounded overflow-hidden">
+                                <img src="https://readdy.ai/api/search-image?query=Modern%20classroom%20with%20diverse%20students%20engaged%20in%20collaborative%20learning%20with%20technology.%20The%20bright%2C%20open%20space%20has%20flexible%20seating%20arrangements%20with%20students%20working%20in%20small%20groups.%20Some%20students%20use%20tablets%20and%20laptops%20while%20others%20work%20on%20a%20collaborative%20project.%20The%20teacher%20facilitates%20rather%20than%20lectures%2C%20moving%20between%20groups.%20Smart%20boards%20and%20digital%20displays%20show%20interactive%20content.%20The%20classroom%20has%20colorful%20educational%20posters%2C%20a%20reading%20corner%20with%20comfortable%20seating%2C%20and%20large%20windows%20providing%20natural%20light.%20The%20atmosphere%20conveys%20active%20engagement%20and%20student-centered%20learning.&width=600&height=400&seq=6&orientation=landscape" alt="Modern classroom with technology" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Educational Timeline Visualization -->
+            <div class="max-w-4xl mx-auto mt-16 mb-12">
+                <h3 class="text-2xl font-bold text-primary mb-6">Key Milestones in School Education</h3>
+                <div class="relative pl-10">
+                    <div class="absolute left-0 top-0 bottom-0 w-1 bg-gray-200"></div>
+                    
+                    <div class="timeline-item relative mb-12 pl-8">
+                        <div class="bg-white p-6 rounded shadow-sm border-l-4 border-primary">
+                            <h4 class="text-xl font-semibold mb-2">3000 BCE - First Formal Schools</h4>
+                            <p>Mesopotamian "tablet houses" where scribes learned cuneiform writing. Egyptian "Houses of Life" for training scribes and priests.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item relative mb-12 pl-8">
+                        <div class="bg-white p-6 rounded shadow-sm border-l-4 border-primary">
+                            <h4 class="text-xl font-semibold mb-2">500 BCE - Greek Educational Innovations</h4>
+                            <p>Establishment of the Academy by Plato and the Lyceum by Aristotle. Development of the Socratic method and emphasis on physical education.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item relative mb-12 pl-8">
+                        <div class="bg-white p-6 rounded shadow-sm border-l-4 border-primary">
+                            <h4 class="text-xl font-semibold mb-2">1088 CE - First University</h4>
+                            <p>University of Bologna established, followed by Paris, Oxford, and Cambridge, marking the beginning of higher education institutions in Europe.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item relative mb-12 pl-8">
+                        <div class="bg-white p-6 rounded shadow-sm border-l-4 border-primary">
+                            <h4 class="text-xl font-semibold mb-2">1440s - Printing Press</h4>
+                            <p>Gutenberg's invention revolutionized access to books and knowledge, making education more accessible and standardized.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item relative mb-12 pl-8">
+                        <div class="bg-white p-6 rounded shadow-sm border-l-4 border-primary">
+                            <h4 class="text-xl font-semibold mb-2">1837 - Kindergarten Movement</h4>
+                            <p>Friedrich Froebel established the first kindergarten in Germany, recognizing the importance of early childhood education.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item relative mb-12 pl-8">
+                        <div class="bg-white p-6 rounded shadow-sm border-l-4 border-primary">
+                            <h4 class="text-xl font-semibold mb-2">1852 - Compulsory Education</h4>
+                            <p>Massachusetts passed the first mandatory school attendance law in the United States, beginning a trend toward universal education.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item relative mb-12 pl-8">
+                        <div class="bg-white p-6 rounded shadow-sm border-l-4 border-primary">
+                            <h4 class="text-xl font-semibold mb-2">1954 - Brown v. Board of Education</h4>
+                            <p>U.S. Supreme Court ruling that segregated schools were unconstitutional, marking a milestone in educational equality.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item relative pl-8">
+                        <div class="bg-white p-6 rounded shadow-sm border-l-4 border-primary">
+                            <h4 class="text-xl font-semibold mb-2">2020 - Global Pandemic Response</h4>
+                            <p>COVID-19 pandemic forced rapid adoption of remote learning technologies and approaches worldwide, potentially reshaping education permanently.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Personal Reflection -->
+            <div class="max-w-4xl mx-auto mt-16">
+                <h3 class="text-2xl font-bold text-primary mb-6">Personal Reflection</h3>
+                <div class="bg-white p-8 rounded-lg shadow-md reflection-card">
+                    <h4 class="text-xl font-semibold mb-4">Bombardino Crocodillo's Educational Journey</h4>
+                    <p class="text-gray-700 mb-4">My educational journey began in a traditional elementary school where rote memorization and standardized testing were the norm. I vividly remember sitting in rows, raising my hand to speak, and the emphasis on following instructions precisely. Our assessments were primarily paper-based tests that measured our ability to recall information rather than apply it.</p>
+                    
+                    <p class="text-gray-700 mb-4">As I progressed to secondary education, I witnessed the gradual integration of technology into the classroom. We moved from occasional computer lab visits to having tablets and interactive whiteboards as regular learning tools. The teaching style also began to shift, with more group projects and discussions supplementing traditional lectures.</p>
+                    
+                    <p class="text-gray-700 mb-4">What strikes me most about the evolution of education during my lifetime is the increasing emphasis on critical thinking and problem-solving skills. While my early education focused on memorizing facts and formulas, my later educational experiences encouraged questioning, analyzing, and creating. This shift reflects broader changes in society's understanding of what knowledge and skills are most valuable.</p>
+                    
+                    <h5 class="text-lg font-semibold mt-6 mb-3">Reflections on Educational Change</h5>
+                    <p class="text-gray-700 mb-4">The most significant changes I've observed in education include:</p>
+                    <ul class="list-disc pl-5 space-y-2 mb-6">
+                        <li><strong>Assessment methods:</strong> Moving from purely summative testing to more formative and project-based assessments.</li>
+                        <li><strong>Teacher-student dynamics:</strong> Evolving from authoritarian models to more collaborative relationships.</li>
+                        <li><strong>Learning environments:</strong> Transitioning from rigid classroom setups to flexible, technology-enhanced spaces.</li>
+                        <li><strong>Curriculum focus:</strong> Shifting from content memorization to skill development and application.</li>
+                    </ul>
+                    
+                    <h5 class="text-lg font-semibold mb-3">Benefits and Areas for Improvement</h5>
+                    <p class="text-gray-700 mb-4">Modern education offers numerous benefits, including personalized learning paths, access to global information, and diverse instructional methods. However, I believe we still need improvement in several areas:</p>
+                    <ul class="list-disc pl-5 space-y-2">
+                        <li>Reducing overreliance on standardized testing as a measure of student and school success.</li>
+                        <li>Addressing educational inequality and ensuring all students have access to quality resources.</li>
+                        <li>Better integrating social-emotional learning alongside academic content.</li>
+                        <li>Preparing students for rapidly changing career landscapes and technologies.</li>
+                        <li>Finding the right balance between digital and traditional learning approaches.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Higher Education Section -->
+    <section id="higher-education" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-primary mb-4">The History of Higher Education</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Exploring the evolution of universities and advanced learning institutions from their medieval origins to today's global academic landscape.</p>
+            </div>
+
+            <!-- Tabs for Higher Education Periods -->
+            <div class="max-w-4xl mx-auto mb-12">
+                <div class="bg-gray-100 p-1 rounded-full flex justify-between mb-8">
+                    <button class="py-2 px-4 rounded-full whitespace-nowrap custom-tab-active flex-1 text-center text-sm md:text-base transition-colors" data-tab="medieval">Medieval Origins</button>
+                    <button class="py-2 px-4 rounded-full whitespace-nowrap flex-1 text-center text-sm md:text-base transition-colors" data-tab="renaissance">Renaissance & Enlightenment</button>
+                    <button class="py-2 px-4 rounded-full whitespace-nowrap flex-1 text-center text-sm md:text-base transition-colors" data-tab="modern">Modern Era</button>
+                    <button class="py-2 px-4 rounded-full whitespace-nowrap flex-1 text-center text-sm md:text-base transition-colors" data-tab="contemporary">Contemporary</button>
+                </div>
+
+                <!-- Medieval Origins Content -->
+                <div class="tab-content" id="medieval-content">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-2xl font-bold text-primary mb-4">Medieval Origins (11th-15th Centuries)</h3>
+                            <p class="mb-4">The first universities emerged in Europe during the High Middle Ages as communities of scholars and students gathered around cathedral schools and centers of learning.</p>
+                            
+                            <h4 class="text-xl font-semibold mb-3">Key Developments:</h4>
+                            <ul class="list-disc pl-5 space-y-2 mb-6">
+                                <li><strong>University of Bologna (1088):</strong> Considered the oldest university in the Western world, initially focused on law.</li>
+                                <li><strong>University of Paris (c.1150):</strong> Became the model for northern European universities, with strength in theology.</li>
+                                <li><strong>University of Oxford (1167):</strong> Oldest university in the English-speaking world.</li>
+                                <li><strong>University of Cambridge (1209):</strong> Founded by scholars who left Oxford after disputes.</li>
+                                <li><strong>Al-Qarawiyyin University (859):</strong> Founded in Fez, Morocco, considered by some as the world's oldest continuously operating university.</li>
+                            </ul>
+                            
+                            <h4 class="text-xl font-semibold mb-3">Medieval University Structure:</h4>
+                            <ul class="list-disc pl-5 space-y-2">
+                                <li><strong>Trivium & Quadrivium:</strong> The seven liberal arts formed the foundation of study.</li>
+                                <li><strong>Faculty Organization:</strong> Typically divided into four faculties: Arts, Law, Medicine, and Theology.</li>
+                                <li><strong>Degree System:</strong> Bachelor's, Master's, and Doctoral degrees originated in this period.</li>
+                                <li><strong>Teaching Methods:</strong> Lectures, disputations, and commentaries on authoritative texts.</li>
+                                <li><strong>Student Life:</strong> Students lived in colleges or rented rooms in university towns.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="aspect-w-16 aspect-h-9 rounded overflow-hidden mb-6">
+                                <img src="https://readdy.ai/api/search-image?query=Medieval%20university%20scene%20showing%20a%20lecture%20hall%20in%20a%20Gothic%20building%20with%20arched%20windows%20and%20stone%20columns.%20A%20professor%20in%20academic%20robes%20lectures%20from%20a%20raised%20podium%20to%20students%20seated%20on%20wooden%20benches%20taking%20notes.%20The%20room%20has%20manuscript%20books%20chained%20to%20lecterns%2C%20candles%20providing%20light%2C%20and%20architectural%20details%20typical%20of%20medieval%20university%20buildings.%20The%20atmosphere%20conveys%20the%20scholarly%20tradition%20of%20early%20European%20universities%20with%20their%20formal%20lectures%20and%20disputations.&width=600&height=400&seq=7&orientation=landscape" alt="Medieval university" class="w-full h-full object-cover">
+                            </div>
+                            
+                            <div class="bg-white p-6 rounded shadow-md border border-gray-200">
+                                <h4 class="text-lg font-semibold mb-4">Important Medieval Scholars</h4>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start">
+                                        <div class="w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full mr-3 flex-shrink-0 mt-1">
+                                            <i class="ri-user-line text-primary"></i>
+                                        </div>
+                                        <div>
+                                            <strong>Peter Abelard (1079-1142):</strong> French scholastic philosopher who taught at the University of Paris.
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <div class="w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full mr-3 flex-shrink-0 mt-1">
+                                            <i class="ri-user-line text-primary"></i>
+                                        </div>
+                                        <div>
+                                            <strong>Thomas Aquinas (1225-1274):</strong> Dominican friar who reconciled Aristotelian philosophy with Christian theology.
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <div class="w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full mr-3 flex-shrink-0 mt-1">
+                                            <i class="ri-user-line text-primary"></i>
+                                        </div>
+                                        <div>
+                                            <strong>Roger Bacon (1214-1292):</strong> Franciscan friar who advocated for experimental science at Oxford.
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <div class="w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full mr-3 flex-shrink-0 mt-1">
+                                            <i class="ri-user-line text-primary"></i>
+                                        </div>
+                                        <div>
+                                            <strong>Christine de Pizan (1364-c.1430):</strong> One of the first women to earn a living through writing and scholarship.
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Renaissance & Enlightenment Content -->
+                <div class="tab-content hidden" id="renaissance-content">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-2xl font-bold text-primary mb-4">Renaissance & Enlightenment (15th-18th Centuries)</h3>
+                            <p class="mb-4">This period saw the revival of classical learning, scientific advancement, and the expansion of higher education beyond religious control. Universities began to embrace new fields of study and research methods.</p>
+                            
+                            <h4 class="text-xl font-semibold mb-3">Key Developments:</h4>
+                            <ul class="list-disc pl-5 space-y-2 mb-6">
+                                <li><strong>Humanist Education:</strong> Revival of classical texts and languages, especially Greek and Latin.</li>
+                                <li><strong>Scientific Revolution:</strong> Universities gradually incorporated new scientific methods and discoveries.</li>
+                                <li><strong>University Expansion:</strong> New institutions founded across Europe and in colonial America.</li>
+                                <li><strong>Harvard College (1636):</strong> First higher education institution in the American colonies.</li>
+                                <li><strong>Royal Society (1660):</strong> Establishment of scientific academies separate from universities.</li>
+                                <li><strong>Secularization:</strong> Gradual shift from religious to state control of universities.</li>
+                            </ul>
+                            
+                            <h4 class="text-xl font-semibold mb-3">Curricular Innovations:</h4>
+                            <ul class="list-disc pl-5 space-y-2">
+                                <li><strong>Scientific Method:</strong> Empirical observation and experimentation gained prominence.</li>
+                                <li><strong>Vernacular Languages:</strong> Gradual shift from Latin to local languages for instruction.</li>
+                                <li><strong>Natural Philosophy:</strong> Precursor to modern sciences became more important.</li>
+                                <li><strong>Practical Education:</strong> Growing emphasis on applied knowledge and professional training.</li>
+                                <li><strong>Classical Education:</strong> Continued importance of Greek and Roman texts, but with new interpretations.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="aspect-w-16 aspect-h-9 rounded overflow-hidden mb-6">
+                                <img src="https://readdy.ai/api/search-image?query=Renaissance%20university%20scene%20showing%20scholars%20in%20a%20grand%20hall%20with%20Renaissance%20architecture.%20The%20room%20has%20tall%20windows%2C%20ornate%20ceilings%2C%20and%20classical%20columns.%20Professors%20and%20students%20in%20Renaissance-era%20clothing%20examine%20scientific%20instruments%2C%20globes%2C%20and%20anatomical%20models.%20Bookshelves%20filled%20with%20leather-bound%20volumes%20line%20the%20walls.%20Some%20scholars%20debate%20while%20others%20conduct%20experiments%20or%20study%20astronomical%20charts.%20The%20scene%20captures%20the%20intellectual%20ferment%20of%20the%20period%20with%20its%20renewed%20interest%20in%20classical%20learning%20combined%20with%20scientific%20inquiry.&width=600&height=400&seq=8&orientation=landscape" alt="Renaissance university" class="w-full h-full object-cover">
+                            </div>
+                            
+                            <div class="bg-white p-6 rounded shadow-md border border-gray-200">
+                                <h4 class="text-lg font-semibold mb-4">Important Renaissance & Enlightenment Scholars</h4>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start">
+                                        <div class="w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full mr-3 flex-shrink-0 mt-1">
+                                            <i class="ri-user-line text-primary"></i>
+                                        </div>
+                                        <div>
+                                            <strong>Erasmus of Rotterdam (1466-1536):</strong> Humanist scholar who promoted classical education.
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <div class="w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full mr-3 flex-shrink-0 mt-1">
+                                            <i class="ri-user-line text-primary"></i>
+                                        </div>
+                                        <div>
+                                            <strong>Galileo Galilei (1564-1642):</strong> Professor at the University of Padua who revolutionized astronomy.
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <div class="w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full mr-3 flex-shrink-0 mt-1">
+                                            <i class="ri-user-line text-primary"></i>
+                                        </div>
+                                        <div>
+                                            <strong>Isaac Newton (1642-1727):</strong> Professor at Cambridge who developed calculus and laws of motion.
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <div class="w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full mr-3 flex-shrink-0 mt-1">
+                                            <i class="ri-user-line text-primary"></i>
+                                        </div>
+                                        <div>
+                                            <strong>Mary Wollstonecraft (1759-1797):</strong> Advocate for women's education and rights.
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modern Era Content -->
+                <div class="tab-content hidden" id="modern-content">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-2xl font-bold text-primary mb-4">Modern Era (19th-Mid 20th Centuries)</h3>
+                            <p class="mb-4">The 19th and early 20th centuries witnessed dramatic transformations in higher education, including the rise of research universities, expanded access, and the development of new academic disciplines.</p>
+                            
+                            <h4 class="text-xl font-semibold mb-3">Key Developments:</h4>
+                            <ul class="list-disc pl-5 space-y-2 mb-6">
+                                <li><strong>Humboldtian Model:</strong> University of Berlin (1810) pioneered the integration of teaching and research.</li>
+                                <li><strong>Land-Grant Colleges:</strong> Morrill Acts (1862, 1890) established public universities in the United States.</li>
+                                <li><strong>Women's Access:</strong> Gradual admission of women to universities, beginning in the mid-19th century.</li>
+                                <li><strong>Research Specialization:</strong> Development of distinct academic disciplines and departments.</li>
+                                <li><strong>Professional Education:</strong> Growth of professional schools for medicine, law, engineering, etc.</li>
+                                <li><strong>Academic Freedom:</strong> Development of tenure and principles of scholarly independence.</li>
+                                <li><strong>Colonial Universities:</strong> Establishment of Western-style universities in colonized regions.</li>
+                            </ul>
+                            
+                            <h4 class="text-xl font-semibold mb-3">Institutional Innovations:</h4>
+                            <ul class="list-disc pl-5 space-y-2">
+                                <li><strong>Research Laboratories:</strong> Dedicated spaces for scientific investigation.</li>
+                                <li><strong>Seminars:</strong> Small group discussions for advanced study.</li>
+                                <li><strong>Academic Journals:</strong> Specialized publications for disseminating research.</li>
+                                <li><strong>Academic Conferences:</strong> Regular gatherings for scholarly exchange.</li>
+                                <li><strong>Doctoral Programs:</strong> Formalized training for researchers and scholars.</li>
+                                <li><strong>Extension Services:</strong> University outreach to broader communities.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="aspect-w-16 aspect-h-9 rounded overflow-hidden mb-6">
+                                <img src="https://readdy.ai/api/search-image?query=19th%20century%20university%20scene%20showing%20a%20scientific%20laboratory%20in%20a%20grand%20Victorian-era%20university%20building.%20The%20laboratory%20has%20high%20ceilings%2C%20large%20windows%2C%20and%20wooden%20workbenches%20with%20scientific%20equipment%20including%20microscopes%2C%20chemical%20apparatus%2C%20and%20electrical%20instruments.%20Male%20professors%20in%20formal%20attire%20work%20alongside%20a%20few%20female%20students%20%28unusual%20for%20the%20period%29.%20The%20walls%20have%20scientific%20charts%20and%20specimens%20in%20glass%20cases.%20Gas%20lamps%20provide%20light.%20The%20scene%20captures%20the%20growing%20emphasis%20on%20scientific%20research%20and%20laboratory%20work%20in%2019th%20century%20universities.&width=600&height=400&seq=9&orientation=landscape" alt="19th century university laboratory" class="w-full h-full object-cover">
+                            </div>
+                            
+                            <div class="bg-white p-6 rounded shadow-md border border-gray-200">
+                                <h4 class="text-lg font-semibold mb-4">Important Modern Era Figures</h4>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start">
+                                        <div class="w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full mr-3 flex-shrink-0 mt-1">
+                                            <i class="ri-user-line text-primary"></i>
+                                        </div>
+                                        <div>
+                                            <strong>Wilhelm von Humboldt (1767-1835):</strong> Founder of the University of Berlin and advocate for the research university model.
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <div class="w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full mr-3 flex-shrink-0 mt-1">
+                                            <i class="ri-user-line text-primary"></i>
+                                        </div>
+                                        <div>
+                                            <strong>Charles W. Eliot (1834-1926):</strong> Harvard president who transformed American higher education.
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <div class="w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full mr-3 flex-shrink-0 mt-1">
+                                            <i class="ri-user-line text-primary"></i>
+                                        </div>
+                                        <div>
+                                            <strong>Marie Curie (1867-1934):</strong> First woman to win a Nobel Prize and pioneer in university research.
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <div class="w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full mr-3 flex-shrink-0 mt-1">
+                                            <i class="ri-user-line text-primary"></i>
+                                        </div>
+                                        <div>
+                                            <strong>W.E.B. Du Bois (1868-1963):</strong> First African American to earn a doctorate from Harvard and advocate for Black education.
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contemporary Content -->
+                <div class="tab-content hidden" id="contemporary-content">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-2xl font-bold text-primary mb-4">Contemporary Higher Education (Mid 20th Century-Present)</h3>
+                            <p class="mb-4">The post-World War II era has seen unprecedented expansion of higher education globally, with technological innovation, internationalization, and increasing focus on accessibility and relevance.</p>
+                            
+                            <h4 class="text-xl font-semibold mb-3">Key Developments:</h4>
+                            <ul class="list-disc pl-5 space-y-2 mb-6">
+                                <li><strong>Mass Higher Education:</strong> Dramatic increase in enrollment and number of institutions worldwide.</li>
+                                <li><strong>Digital Revolution:</strong> Integration of computers, internet, and digital resources into teaching and research.</li>
+                                <li><strong>Globalization:</strong> International student mobility, branch campuses, and global research networks.</li>
+                                <li><strong>Diversification:</strong> Greater inclusion of women, minorities, and non-traditional students.</li>
+                                <li><strong>Funding Challenges:</strong> Shifts from public to private funding sources in many countries.</li>
+                                <li><strong>Online Learning:</strong> Development of distance education, MOOCs, and virtual universities.</li>
+                                <li><strong>Interdisciplinary Approaches:</strong> Breaking down of traditional disciplinary boundaries.</li>
+                                <li><strong>Assessment Culture:</strong> Increased emphasis on outcomes, rankings, and accountability.</li>
+                            </ul>
+                            
+                            <h4 class="text-xl font-semibold mb-3">Current Trends:</h4>
+                            <ul class="list-disc pl-5 space-y-2">
+                                <li><strong>Lifelong Learning:</strong> Education extending beyond traditional age groups and career stages.</li>
+                                <li><strong>Competency-Based Education:</strong> Focus on skills and outcomes rather than seat time.</li>
+                                <li><strong>Open Access:</strong> Movement toward freely available research and educational resources.</li>
+                                <li><strong>Industry Partnerships:</strong> Closer collaboration between universities and businesses.</li>
+                                <li><strong>Sustainability:</strong> Integration of environmental and social responsibility into curricula and operations.</li>
+                                <li><strong>AI and Automation:</strong> Emerging technologies reshaping teaching, research, and administration.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="aspect-w-16 aspect-h-9 rounded overflow-hidden mb-6">
+                                <img src="https://readdy.ai/api/search-image?query=Contemporary%20university%20scene%20showing%20a%20modern%20campus%20with%20diverse%20students%20using%20digital%20technology.%20The%20space%20has%20floor-to-ceiling%20windows%2C%20modern%20architecture%20with%20sustainable%20design%20elements%2C%20and%20flexible%20learning%20spaces.%20Students%20of%20various%20ethnicities%2C%20genders%2C%20and%20ages%20collaborate%20in%20small%20groups%20using%20laptops%2C%20tablets%2C%20and%20interactive%20displays.%20Some%20participate%20in%20a%20video%20conference%20with%20international%20partners.%20The%20environment%20includes%20collaborative%20workspaces%2C%20digital%20resource%20centers%2C%20and%20casual%20meeting%20areas.%20The%20atmosphere%20conveys%20the%20global%2C%20technology-enhanced%20nature%20of%20contemporary%20higher%20education.&width=600&height=400&seq=10&orientation=landscape" alt="Contemporary university" class="w-full h-full object-cover">
+                            </div>
+                            
+                            <div class="bg-white p-6 rounded shadow-md border border-gray-200">
+                                <h4 class="text-lg font-semibold mb-4">Contemporary Higher Education by the Numbers</h4>
+                                <div class="space-y-4">
+                                    <div>
+                                        <div class="flex justify-between mb-1">
+                                            <span class="font-medium">Global Tertiary Enrollment</span>
+                                            <span>220+ million</span>
+                                        </div>
+                                        <div class="w-full bg-gray-200 rounded-full h-2">
+                                            <div class="bg-primary h-2 rounded-full" style="width: 85%"></div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex justify-between mb-1">
+                                            <span class="font-medium">International Students</span>
+                                            <span>5.6+ million</span>
+                                        </div>
+                                        <div class="w-full bg-gray-200 rounded-full h-2">
+                                            <div class="bg-primary h-2 rounded-full" style="width: 65%"></div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex justify-between mb-1">
+                                            <span class="font-medium">Female Enrollment</span>
+                                            <span>~50%</span>
+                                        </div>
+                                        <div class="w-full bg-gray-200 rounded-full h-2">
+                                            <div class="bg-primary h-2 rounded-full" style="width: 50%"></div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex justify-between mb-1">
+                                            <span class="font-medium">Online Learning Participation</span>
+                                            <span>Growing rapidly</span>
+                                        </div>
+                                        <div class="w-full bg-gray-200 rounded-full h-2">
+                                            <div class="bg-primary h-2 rounded-full" style="width: 75%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Higher Education Timeline -->
+            <div class="max-w-4xl mx-auto mt-16">
+                <h3 class="text-2xl font-bold text-primary mb-6">Key Milestones in Higher Education</h3>
+                <div id="higher-ed-timeline" class="h-96"></div>
+            </div>
+
+            <!-- Personal Reflection -->
+            <div class="max-w-4xl mx-auto mt-16">
+                <h3 class="text-2xl font-bold text-primary mb-6">Personal Reflection</h3>
+                <div class="bg-white p-8 rounded-lg shadow-md reflection-card">
+                    <h4 class="text-xl font-semibold mb-4">Capuchino Assassino's Future Academic Journey</h4>
+                    
+                    <h5 class="text-lg font-semibold mt-6 mb-3">Expectations for University Life</h5>
+                    <p class="text-gray-700 mb-4">As I prepare to embark on my university journey, I envision an intellectually stimulating environment where I can explore diverse perspectives and challenge my own thinking. I expect university to be a place of both academic rigor and personal growth, where I'll encounter ideas that reshape my understanding of the world and my place in it.</p>
+                    
+                    <p class="text-gray-700 mb-4">I anticipate that university will provide me with opportunities to engage with cutting-edge research and work alongside experts in my field of interest. Beyond the classroom, I look forward to participating in a vibrant campus community with cultural events, student organizations, and meaningful discussions with peers from different backgrounds and life experiences.</p>
+                    
+                    <p class="text-gray-700 mb-4">While I recognize that university will be challenging, I welcome the intellectual demands and the chance to develop greater independence and resilience. I expect to face moments of uncertainty and struggle, but I believe these experiences will be valuable for my personal and professional development.</p>
+                    
+                    <h5 class="text-lg font-semibold mt-6 mb-3">My Envisioned Role in the University Community</h5>
+                    <p class="text-gray-700 mb-4">Within the university community, I hope to be an active participant rather than a passive consumer of education. I see myself engaging deeply in classroom discussions, seeking out faculty mentorship, and collaborating with fellow students on projects and research initiatives.</p>
+                    
+                    <p class="text-gray-700 mb-4">I also envision taking on leadership roles in student organizations related to my academic interests and social causes I care about. By organizing events, workshops, or discussion groups, I hope to contribute to a vibrant intellectual community that extends learning beyond formal coursework.</p>
+                    
+                    <p class="text-gray-700 mb-4">As I progress in my studies, I aim to serve as a mentor to incoming students, sharing knowledge and experiences to help them navigate their own academic journeys. I believe in the importance of creating supportive networks within the university community.</p>
+                    
+                    <h5 class="text-lg font-semibold mt-6 mb-3">Contributions I Hope to Make</h5>
+                    <p class="text-gray-700 mb-4">Academically, I hope to contribute original research that advances knowledge in my field. I'm particularly interested in interdisciplinary approaches that connect different areas of study to address complex problems. I aspire to publish my work, present at conferences, and engage in scholarly conversations that extend beyond campus boundaries.</p>
+                    
+                    <p class="text-gray-700 mb-4">Socially, I aim to foster an inclusive community by bridging divides between different student groups and promoting cross-cultural understanding. I believe universities should be places where diverse perspectives are valued and where students learn from one another's differences.</p>
+                    
+                    <p class="text-gray-700 mb-4">In extracurricular activities, I plan to contribute my time and talents to initiatives that connect the university with the broader community. Whether through service-learning projects, community-based research, or volunteer work, I hope to apply my education to address real-world challenges and make a positive impact beyond campus.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Future of Education Section -->
+    <section id="future-education" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-primary mb-4">The Future of Education</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Exploring how education might evolve over the next 50-100 years as technology, society, and our understanding of learning continue to transform.</p>
+            </div>
+
+            <!-- Technology Impact -->
+            <div class="max-w-4xl mx-auto mb-16">
+                <h3 class="text-2xl font-bold text-primary mb-6">Technological Advancements in Education</h3>
+                
+                <div class="grid md:grid-cols-3 gap-6 mb-12">
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-4">
+                            <i class="ri-ai-generate-line text-primary ri-xl"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold mb-3">Artificial Intelligence</h4>
+                        <p class="text-gray-700">AI will likely transform education through personalized learning paths, intelligent tutoring systems, and automated assessment. AI could analyze individual learning patterns to create custom curricula that adapt in real-time to student progress and preferences.</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-4">
+                            <i class="ri-vr-line text-primary ri-xl"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold mb-3">Virtual & Augmented Reality</h4>
+                        <p class="text-gray-700">VR and AR will enable immersive learning experiences that transcend physical limitations. Students might explore ancient Rome, witness chemical reactions at the molecular level, or practice surgical procedures in realistic simulations.</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-4">
+                            <i class="ri-brain-line text-primary ri-xl"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold mb-3">Brain-Computer Interfaces</h4>
+                        <p class="text-gray-700">Emerging BCI technology could eventually enable direct knowledge transfer, allowing students to acquire information more efficiently. While still speculative, this technology might someday help overcome learning disabilities or accelerate skill acquisition.</p>
+                    </div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-4">
+                            <i class="ri-global-line text-primary ri-xl"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold mb-3">Global Connectivity</h4>
+                        <p class="text-gray-700">Universal high-speed internet access and advanced translation technologies will connect learners worldwide, enabling collaborative projects across cultures and borders. Education could become truly global, with students forming diverse learning communities regardless of location.</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-4">
+                            <i class="ri-robot-line text-primary ri-xl"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold mb-3">Robotics & Automation</h4>
+                        <p class="text-gray-700">Educational robots might serve as teaching assistants, lab partners, or peer learners. Automation could handle administrative tasks, allowing human educators to focus on mentorship, creativity, and social-emotional development.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Future Teaching Methods -->
+            <div class="max-w-4xl mx-auto mb-16">
+                <h3 class="text-2xl font-bold text-primary mb-6">Future Teaching Methods</h3>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md mb-10">
+                    <h4 class="text-xl font-semibold mb-4">Will Traditional Educational Institutions Persist?</h4>
+                    <p class="text-gray-700 mb-6">While physical schools and universities will likely continue to exist, their form and function may change dramatically. We might see a shift toward:</p>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h5 class="text-lg font-semibold mb-2">Hybrid Learning Environments</h5>
+                            <p class="text-gray-700 mb-4">Educational institutions may evolve into hybrid spaces that combine physical facilities with virtual components. Students might alternate between in-person collaboration and remote individual learning, with physical campuses serving as social hubs and centers for hands-on activities that cannot be replicated digitally.</p>
+                            
+                            <h5 class="text-lg font-semibold mb-2">Competency-Based Progression</h5>
+                            <p class="text-gray-700">Traditional age-based grade levels may give way to competency-based progression, allowing students to advance based on mastery rather than time spent. This could lead to more flexible educational pathways and timelines, with some students completing traditional "K-12" content in fewer years while others take more time in specific areas.</p>
+                        </div>
+                        
+                        <div>
+                            <h5 class="text-lg font-semibold mb-2">Lifelong Learning Institutions</h5>
+                            <p class="text-gray-700 mb-4">Educational institutions may increasingly serve learners of all ages, not just children and young adults. Universities might transform into lifelong learning hubs where people return throughout their careers for upskilling, reskilling, and intellectual enrichment.</p>
+                            
+                            <h5 class="text-lg font-semibold mb-2">Distributed Education Networks</h5>
+                            <p class="text-gray-700">Rather than centralized schools and universities, we might see distributed networks of learning spaces embedded within communities. These could include maker spaces, learning labs, and community centers that connect to larger institutional resources while maintaining local relevance.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                        <h4 class="text-lg font-semibold mb-3">Neurologically-Optimized Learning</h4>
+                        <p class="text-gray-700">Teaching methods may increasingly incorporate insights from neuroscience, with learning experiences designed to work with rather than against the brain's natural processes. This could include optimal timing for different types of learning activities, personalized cognitive approaches, and techniques to enhance memory formation and retention.</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                        <h4 class="text-lg font-semibold mb-3">Project-Based Global Collaboration</h4>
+                        <p class="text-gray-700">Students might increasingly learn through collaborative projects addressing real-world challenges, working with peers across the globe. These projects could span traditional subject boundaries and connect learners with mentors from industry, academia, and community organizations worldwide.</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                        <h4 class="text-lg font-semibold mb-3">AI-Human Teaching Partnerships</h4>
+                        <p class="text-gray-700">Future educators might work alongside sophisticated AI systems that handle content delivery, basic assessment, and personalization, allowing human teachers to focus on mentorship, inspiration, ethical guidance, and developing students' social-emotional skills.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dream School Concept -->
+            <div class="max-w-4xl mx-auto">
+                <h3 class="text-2xl font-bold text-primary mb-6">Dream School Concept</h3>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md reflection-card mb-12">
+                    <h4 class="text-xl font-semibold mb-4">Ballerina Capuchina's Vision for the Ideal Educational Institution</h4>
+                    
+                    <p class="text-gray-700 mb-6">My dream educational institution would transcend traditional boundaries between disciplines, age groups, and learning contexts. I envision a learning ecosystem that adapts to individual needs while fostering community and collaboration, preparing learners not just for existing careers but for creating solutions to challenges we cannot yet imagine.</p>
+                    
+                    <h5 class="text-lg font-semibold mt-6 mb-3">Core Principles</h5>
+                    <ul class="list-disc pl-5 space-y-2 mb-6">
+                        <li><strong>Personalization with Purpose:</strong> Learning would be tailored to individual interests, abilities, and goals, but always connected to broader societal needs and challenges.</li>
+                        <li><strong>Seamless Technology Integration:</strong> Technology would enhance rather than replace human connection, serving as a tool for creativity and collaboration.</li>
+                        <li><strong>Holistic Development:</strong> Equal emphasis would be placed on intellectual growth, emotional intelligence, physical wellbeing, and ethical development.</li>
+                        <li><strong>Real-World Relevance:</strong> Learning would occur through authentic projects with meaningful impact, not artificial exercises.</li>
+                        <li><strong>Intergenerational Exchange:</strong> Students of different ages would learn together and from each other, with fluid boundaries between teacher and learner roles.</li>
+                    </ul>
+                    
+                    <h5 class="text-lg font-semibold mt-6 mb-3">Physical and Virtual Environment</h5>
+                    <p class="text-gray-700 mb-4">The physical campus would feature flexible, reconfigurable spaces designed to support different types of learning activities—from quiet reflection to collaborative creation to physical movement. Natural elements would be integrated throughout, with gardens, water features, and abundant natural light.</p>
+                    
+                    <p class="text-gray-700 mb-4">The virtual environment would extend learning beyond physical limitations, allowing students to connect with peers, mentors, and resources globally. Virtual and augmented reality would enable immersive experiences that would be impossible in the physical world alone.</p>
+                    
+                    <h5 class="text-lg font-semibold mt-6 mb-3">Innovative Features</h5>
+                    <ul class="list-disc pl-5 space-y-2 mb-6">
+                        <li><strong>Learning Journeys:</strong> Instead of fixed curricula, students would embark on personalized learning journeys guided by interdisciplinary questions and challenges.</li>
+                        <li><strong>AI Learning Companions:</strong> Each student would have an AI companion that grows with them, helping to identify resources, track progress, and connect with human mentors when needed.</li>
+                        <li><strong>Global Classroom:</strong> Regular collaboration with partner institutions worldwide would expose students to diverse perspectives and approaches.</li>
+                        <li><strong>Community Integration:</strong> The boundary between school and community would be permeable, with students spending significant time learning in and contributing to the broader community.</li>
+                        <li><strong>Multimodal Assessment:</strong> Progress would be measured through diverse methods including portfolios, demonstrations, peer feedback, and self-reflection, not just traditional tests.</li>
+                        <li><strong>Wellness Center:</strong> A dedicated space for physical and mental health support, including meditation, exercise, nutrition guidance, and counseling.</li>
+                    </ul>
+                    
+                    <p class="text-gray-700">This dream institution would not just prepare students for the future—it would empower them to create a better future through innovation, collaboration, and compassionate leadership. By balancing technological advancement with human connection, and individual growth with community responsibility, it would nurture the whole person while addressing the complex challenges of our rapidly changing world.</p>
+                </div>
+                
+                <div id="future-education-chart" class="h-96 mb-12"></div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <h4 class="text-xl font-semibold mb-4">Key Predictions for Education in 2075</h4>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <h5 class="text-lg font-semibold mb-2">Institutional Structure</h5>
+                            <div class="flex items-center">
+                                <span class="text-sm text-gray-500 w-40">Traditional Schools</span>
+                                <div class="w-full bg-gray-200 rounded-full h-2 mx-4">
+                                    <div class="bg-primary h-2 rounded-full" style="width: 30%"></div>
+                                </div>
+                                <span class="text-sm text-gray-500 w-40">Learning Networks</span>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h5 class="text-lg font-semibold mb-2">Learning Delivery</h5>
+                            <div class="flex items-center">
+                                <span class="text-sm text-gray-500 w-40">Human Teachers</span>
+                                <div class="w-full bg-gray-200 rounded-full h-2 mx-4">
+                                    <div class="bg-primary h-2 rounded-full" style="width: 50%"></div>
+                                </div>
+                                <span class="text-sm text-gray-500 w-40">AI-Human Partnership</span>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h5 class="text-lg font-semibold mb-2">Content Organization</h5>
+                            <div class="flex items-center">
+                                <span class="text-sm text-gray-500 w-40">Subject-Based</span>
+                                <div class="w-full bg-gray-200 rounded-full h-2 mx-4">
+                                    <div class="bg-primary h-2 rounded-full" style="width: 20%"></div>
+                                </div>
+                                <span class="text-sm text-gray-500 w-40">Challenge-Based</span>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h5 class="text-lg font-semibold mb-2">Learning Environment</h5>
+                            <div class="flex items-center">
+                                <span class="text-sm text-gray-500 w-40">Physical</span>
+                                <div class="w-full bg-gray-200 rounded-full h-2 mx-4">
+                                    <div class="bg-primary h-2 rounded-full" style="width: 40%"></div>
+                                </div>
+                                <span class="text-sm text-gray-500 w-40">Mixed Reality</span>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h5 class="text-lg font-semibold mb-2">Assessment Methods</h5>
+                            <div class="flex items-center">
+                                <span class="text-sm text-gray-500 w-40">Standardized Tests</span>
+                                <div class="w-full bg-gray-200 rounded-full h-2 mx-4">
+                                    <div class="bg-primary h-2 rounded-full" style="width: 15%"></div>
+                                </div>
+                                <span class="text-sm text-gray-500 w-40">Continuous Evaluation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">History of Education</h3>
+                    <p class="text-gray-300 mb-4">Exploring the past, present, and future of educational systems worldwide.</p>
+                    <p class="text-gray-300">Last updated: May 13, 2025</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Navigation</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#school-education" class="text-gray-300 hover:text-white transition-colors">School Education</a></li>
+                        <li><a href="#higher-education" class="text-gray-300 hover:text-white transition-colors">Higher Education</a></li>
+                        <li><a href="#future-education" class="text-gray-300 hover:text-white transition-colors">Future of Education</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contributors</h3>
+                    <ul class="space-y-2">
+                        <li class="text-gray-300">Bombardino Crocodillo</li>
+                        <li class="text-gray-300">Capuchino Assassino</li>
+                        <li class="text-gray-300">Ballerina Capuchina</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 History of Education Project. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile Menu Toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Timeline Slider
+            const timelineSlider = document.getElementById('timeline-slider');
+            const timelineSections = document.querySelectorAll('.timeline-section');
+            
+            timelineSlider.addEventListener('input', function() {
+                const value = parseInt(this.value);
+                timelineSections.forEach((section, index) => {
+                    if (index + 1 === value) {
+                        section.classList.remove('hidden');
+                    } else {
+                        section.classList.add('hidden');
+                    }
+                });
+            });
+            
+            // Higher Education Tabs
+            const tabButtons = document.querySelectorAll('[data-tab]');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const tabName = this.getAttribute('data-tab');
+                    
+                    // Update button styles
+                    tabButtons.forEach(btn => {
+                        btn.classList.remove('custom-tab-active');
+                    });
+                    this.classList.add('custom-tab-active');
+                    
+                    // Show selected content
+                    tabContents.forEach(content => {
+                        content.classList.add('hidden');
+                    });
+                    document.getElementById(`${tabName}-content`).classList.remove('hidden');
+                });
+            });
+            
+            // Higher Education Timeline Chart
+            const higherEdTimelineChart = echarts.init(document.getElementById('higher-ed-timeline'));
+            const higherEdOption = {
+                animation: false,
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: {
+                        type: 'shadow'
+                    },
+                    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                    borderColor: '#eee',
+                    borderWidth: 1,
+                    textStyle: {
+                        color: '#1f2937'
+                    }
+                },
+                grid: {
+                    top: 10,
+                    right: 0,
+                    bottom: 30,
+                    left: 0,
+                    containLabel: true
+                },
+                xAxis: {
+                    type: 'category',
+                    data: ['1088', '1636', '1810', '1876', '1950s', '1990s', '2020s'],
+                    axisLabel: {
+                        color: '#1f2937'
+                    }
+                },
+                yAxis: {
+                    type: 'value',
+                    show: false
+                },
+                series: [
+                    {
+                        name: 'Key Developments',
+                        type: 'line',
+                        smooth: true,
+                        symbol: 'none',
+                        lineStyle: {
+                            width: 3,
+                            color: 'rgba(87, 181, 231, 1)'
+                        },
+                        areaStyle: {
+                            color: {
+                                type: 'linear',
+                                x: 0,
+                                y: 0,
+                                x2: 0,
+                                y2: 1,
+                                colorStops: [{
+                                    offset: 0, color: 'rgba(87, 181, 231, 0.2)'
+                                }, {
+                                    offset: 1, color: 'rgba(87, 181, 231, 0.05)'
+                                }]
+                            }
+                        },
+                        data: [10, 20, 35, 45, 65, 80, 95]
+                    }
+                ]
+            };
+            higherEdTimelineChart.setOption(higherEdOption);
+            
+            // Future Education Chart
+            const futureEducationChart = echarts.init(document.getElementById('future-education-chart'));
+            const futureOption = {
+                animation: false,
+                title: {
+                    text: 'Projected Evolution of Educational Components',
+                    left: 'center',
+                    textStyle: {
+                        color: '#1f2937'
+                    }
+                },
+                tooltip: {
+                    trigger: 'item',
+                    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                    borderColor: '#eee',
+                    borderWidth: 1,
+                    textStyle: {
+                        color: '#1f2937'
+                    }
+                },
+                legend: {
+                    orient: 'vertical',
+                    left: 'left',
+                    textStyle: {
+                        color: '#1f2937'
+                    }
+                },
+                series: [
+                    {
+                        name: 'Current Education',
+                        type: 'pie',
+                        radius: ['20%', '40%'],
+                        center: ['25%', '50%'],
+                        avoidLabelOverlap: false,
+                        itemStyle: {
+                            borderRadius: 8,
+                            borderColor: '#fff',
+                            borderWidth: 2
+                        },
+                        label: {
+                            show: false
+                        },
+                        emphasis: {
+                            label: {
+                                show: true,
+                                fontSize: '14',
+                                fontWeight: 'bold'
+                            }
+                        },
+                        labelLine: {
+                            show: false
+                        },
+                        data: [
+                            { value: 40, name: 'Content Knowledge', itemStyle: { color: 'rgba(87, 181, 231, 1)' } },
+                            { value: 25, name: 'Critical Thinking', itemStyle: { color: 'rgba(141, 211, 199, 1)' } },
+                            { value: 15, name: 'Technology Skills', itemStyle: { color: 'rgba(251, 191, 114, 1)' } },
+                            { value: 20, name: 'Social-Emotional', itemStyle: { color: 'rgba(252, 141, 98, 1)' } }
+                        ]
+                    },
+                    {
+                        name: 'Future Education (2075)',
+                        type: 'pie',
+                        radius: ['20%', '40%'],
+                        center: ['75%', '50%'],
+                        avoidLabelOverlap: false,
+                        itemStyle: {
+                            borderRadius: 8,
+                            borderColor: '#fff',
+                            borderWidth: 2
+                        },
+                        label: {
+                            show: false
+                        },
+                        emphasis: {
+                            label: {
+                                show: true,
+                                fontSize: '14',
+                                fontWeight: 'bold'
+                            }
+                        },
+                        labelLine: {
+                            show: false
+                        },
+                        data: [
+                            { value: 15, name: 'Content Knowledge', itemStyle: { color: 'rgba(87, 181, 231, 1)' } },
+                            { value: 35, name: 'Critical Thinking', itemStyle: { color: 'rgba(141, 211, 199, 1)' } },
+                            { value: 30, name: 'Technology Skills', itemStyle: { color: 'rgba(251, 191, 114, 1)' } },
+                            { value: 20, name: 'Social-Emotional', itemStyle: { color: 'rgba(252, 141, 98, 1)' } }
+                        ]
+                    }
+                ]
+            };
+            futureEducationChart.setOption(futureOption);
+            
+            // Responsive charts
+            window.addEventListener('resize', function() {
+                higherEdTimelineChart.resize();
+                futureEducationChart.resize();
+            });
+        });
+    </script>
+</body>
+</html>
